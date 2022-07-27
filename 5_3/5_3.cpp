@@ -71,7 +71,7 @@ public:
     {}
     bool check_correctness_figure() const override
     {
-        return (((A1 + B1 + C1) == 180) && (C1 == 90)) ? true : false;
+        return Triangle::check_correctness_figure() && C1 == 90 ? true : false;
     }
 };
 
@@ -82,7 +82,7 @@ public:
     {}
     bool check_correctness_figure() const override
     {
-        return (((A1 + B1 + C1) == 180) && ((a1 == c1) && (A1 == C1))) ? true : false;
+        return Triangle::check_correctness_figure() && ((a1 == c1) && (A1 == C1)) ? true : false;
     }
 };
 
@@ -93,11 +93,11 @@ public:
     {}
     bool check_correctness_figure() const override
     {
-        return ((a1 == b1 == c1) && (A1 == B1 == C1 == 60)) ? true : false;
+        return ((A1 == B1 == C1 == 60) && (a1 == b1 == c1)) ? true : false;
     }
 };
 
-//Пошли четырёхугольники
+//Пошли четырёхугольники 
 
 class Quadrilateral :public Figure
 {
@@ -133,7 +133,7 @@ public:
     {}
     bool check_correctness_figure() const override
     {
-        return ((a1 == b1 && c1 == d1) && (A1 == B1 == C1 == D1 == 90)) ? true : false;
+        return (Quadrilateral::check_correctness_figure() && (A1 == B1 == C1 == D1 == 90) && (a1 == c1 && b1 == d1)) ? true : false;
     }
 };
 
@@ -144,7 +144,7 @@ public:
     {}
     bool check_correctness_figure() const override
     {
-        return ((a1 == b1 == c1 == d1) && (A1 == B1 == C1 == D1 == 90)) ? true : false;
+        return (Quadrilateral::check_correctness_figure() && (A1 == B1 == C1 == D1 == 90) && (a1 == b1 == c1 == d1)) ? true : false;
     }
 };
 
@@ -155,7 +155,7 @@ public:
     {}
     bool check_correctness_figure() const override
     {
-        return (((A1 + B1 + C1 + D1) == 360) && (a1 == b1 && c1 == d1) && (A1 == B1 && C1 == D1)) ? true : false;
+        return (Quadrilateral::check_correctness_figure() && (a1 == c1 && b1 == d1) && (A1 == C1 && B1 == D1)) ? true : false;
     }
 };
 
@@ -166,7 +166,7 @@ public:
     {}
     bool check_correctness_figure() const override
     {
-        return ((((A1 + B1 + C1 + D1) == 360) && (a1 == b1 == c1 == d1) && (A1 == B1 && C1 D1))) ? true : false;
+        return (Quadrilateral::check_correctness_figure() && (a1 == b1 == c1 == d1) && (A1 == C1 && B1 == D1)) ? true : false;
     }
 };
 
