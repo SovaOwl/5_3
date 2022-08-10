@@ -10,7 +10,7 @@ protected:
     int side;
     string figure_name;
 
-    Figure(int side_count, const string& name = "Фигура:") : side(side_count), figure_name(name)
+    Figure(int side_count, const string& name = "Фигура: ") : side(side_count), figure_name(name)
     {}
 
     virtual bool check_correctness_figure() const
@@ -177,7 +177,7 @@ void print_figures(Figure* figure)
 }
 int main()
 {
-    setlocale(LC_ALL, "Rus");
+    system("chcp 1251");
 
     Triangle triangle(10, 20, 30, 50, 60, 70);
     Right_triangle right_triangle(10, 20, 30, 50, 60, 90);
