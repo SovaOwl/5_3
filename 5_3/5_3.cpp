@@ -45,7 +45,7 @@ protected:
 
     bool check_correctness_figure() const override
     {
-        return ((A1 + B1 + C1) == 180) ? true : false;
+        return ((A1 + B1 + C1) == 180);
     }
 
 public:
